@@ -43,4 +43,4 @@ class BookModel(models.Model):
         verbose_name_plural = 'Книги'
 
     def __str__(self):
-        return f'Название книги {self.book_name}'
+        return f'Название книги: {self.book_name}, id: {self.id}'
