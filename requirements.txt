@@ -1,0 +1,7 @@
+Django==4.2.6
+djangorestframework==3.14.0
+psycopg2-binary==2.9.9
+django-filter==23.3
+django-rest-swagger==2.2.0
+PyYAML==6.0.1
+django-debug-toolbar==4.2.0
