@@ -13,7 +13,7 @@ class AuthorModel(models.Model):
         verbose_name_plural = 'Авторы'
 
     def __str__(self):
-        return f'{self.author_name}, {self.author_surname}'
+        return f'{self.author_name} {self.author_surname},  id: {self.id}'
 
 
 class GenreModel(models.Model):
@@ -26,7 +26,7 @@ class GenreModel(models.Model):
         verbose_name_plural = 'Жанры'
 
     def __str__(self):
-        return self.genre_name
+        return f'{self.genre_name},  id: {self.id}'
 
 
 class BookModel(models.Model):
