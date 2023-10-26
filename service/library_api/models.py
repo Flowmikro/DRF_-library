@@ -5,8 +5,8 @@ from django.db import models
 class AuthorModel(models.Model):
     """Поля автора"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    author_name = models.CharField('Имя', help_text='Ведите имя', max_length=60)
-    author_surname = models.CharField('Фамилия', max_length=70, help_text='Ведите фамилию', unique=True)
+    author_name = models.CharField('Имя', help_text='Введите имя', max_length=60)
+    author_surname = models.CharField('Фамилия', max_length=70, help_text='Введите фамилию', unique=True)
 
     class Meta:
         verbose_name = 'Авторы'
@@ -19,7 +19,7 @@ class AuthorModel(models.Model):
 class GenreModel(models.Model):
     """Поля жанра"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    genre_name = models.CharField('Название жанра', help_text='Ведите название', max_length=30, unique=True)
+    genre_name = models.CharField('Название жанра', help_text='Введите название', max_length=30, unique=True)
 
     class Meta:
         verbose_name = 'Жанр'
@@ -32,7 +32,7 @@ class GenreModel(models.Model):
 class BookModel(models.Model):
     """Поля книги"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    book_name = models.CharField('Книга', help_text='Ведите название книги', max_length=50, unique=True, db_index=True)
+    book_name = models.CharField('Книга', help_text='Введите название книги', max_length=50, unique=True, db_index=True)
     description = models.TextField('Описание', help_text='Описание книги')
     price = models.PositiveIntegerField('Цена', help_text='Установите цену', default=100, db_index=True)
     author = models.ManyToManyField(AuthorModel, verbose_name='Автор книги', db_index=True)
